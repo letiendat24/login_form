@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng ký tài khoản</h2>
+        <input type="text" id="reg-username" placeholder="Tên đăng nhập">
+        <input type="password" id="reg-password" placeholder="Mật khẩu">
+        <button id="register-btn">Đăng ký</button>
+        <p id="error-msg"></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

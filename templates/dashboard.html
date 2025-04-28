@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- <div class="login-container">
+        <h2>Chào {{ username }}!</h2>
+        <a href="{{ url_for('logout') }}"><button>Đăng xuất</button></a>
+    </div> -->
+    <div class="header">
+        <h1>WELCOME DASHBOARD</h1>
+        <a href="{{ url_for('logout') }}"><button>Đăng xuất</button></a>
+    </div>
+   
+    <h2>Chào {{ username }}!</h2>
+</body>
+</html>
