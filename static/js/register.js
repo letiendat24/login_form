@@ -8,15 +8,17 @@ $(document).ready(function() {
             return;
         }
 
+        const hashedPassword = CryptoJS.MD5(password).toString();
+
         $.ajax({
-            url: '/api/register',
+            url: '/loginsys/api/register',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ username, password }),
+            data: JSON.stringify({ username, password: hashedPassword }),
             success: function(response) {
                 if (response.success) {
                     alert('Đăng ký thành công! Mời bạn đăng nhập.');
-                    window.location.href = "/";
+                    window.location.href = "/loginsys/";
                 } else {
                     $('#error-msg').text(response.message);
                 }

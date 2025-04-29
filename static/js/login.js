@@ -9,14 +9,16 @@ $(document).ready(function() {
             return;
         }
 
+        const hashedPassword = CryptoJS.MD5(password).toString();
+
         $.ajax({
-            url: '/login',
+            url: '/loginsys/login',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ username, password }),
+            data: JSON.stringify({ username, password: hashedPassword }),
             success: function(response) {
                 if (response.success) {
-                    window.location.href = "/dashboard";
+                    window.location.href = "/loginsys/dashboard";
                 } else {
                     $('#error-msg').text(response.message);
                 }
